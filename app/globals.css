@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --scrollbar-track: #131020;
+  --scrollbar-thumb: #2D2650;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #09080F;
+  color: #F3F0FF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3D3660;
+}
+
+/* Horizontal scroll without scrollbar */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prose styles for markdown in messages */
+.prose-kavi {
+  line-height: 1.6;
+}
+.prose-kavi p {
+  margin: 0 0 0.5em;
+}
+.prose-kavi p:last-child {
+  margin-bottom: 0;
+}
+.prose-kavi strong {
+  color: #F3F0FF;
+  font-weight: 600;
+}
+.prose-kavi a {
+  color: #A855F7;
+  text-decoration: underline;
+}
+.prose-kavi ul {
+  margin: 0.5em 0;
+  padding-left: 1.2em;
+  list-style-type: disc;
+}
+.prose-kavi ol {
+  margin: 0.5em 0;
+  padding-left: 1.2em;
+}
+.prose-kavi li {
+  margin: 0.2em 0;
+}
+.prose-kavi code {
+  background: rgba(124, 58, 237, 0.15);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: monospace;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #7C3AED, #A855F7, #F59E0B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer loading skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #1C1830 0%,
+    #251F40 50%,
+    #1C1830 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
